@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IP 2017</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  
+  <style>
+  *{
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+  width: 100%;
+  height:100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #f6f6f6;
+  
+}
+.login { 
+  position: absolute;
+  top: 30%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  height:300px;
+}
+.login h1 { color: #444444;letter-spacing:1px; text-align:center; font-size: 20px;}
+
+input { 
+  width: 100%; 
+  margin-bottom: 10px; 
+  background: rgba(0,0,0,0.1);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 4px;
+  
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+<div class="login" style="width:800px;">
+  <div style="width:100%;height:100px;text-align:center;"><img src="bike.svg" style="height:100px;"/></div>
+  <h1>FIETSEN.LADEN</h1>
+    <br><br>
+
+    <div id="iconholder" style="text-align:center;width:100%;">
+      <table align="center">
+        <tr>
+          <td><img id="pp" src="one.png" style="height:200px;cursor:pointer;"/></td>
+          <td><img id="dt" src="two.png" style="height:200px;cursor:pointer;"/></td>
+          <td><img src="three.png" style="height:200px;cursor:pointer;"/></td>
+        </tr>
+      </table>
+
+    </div>
+  <br><br><br><br><hr>    
+  <div style="width:100%;text-align:center;"><img id="qrevealer" style="cursor:pointer" src="qr.png"/>
+  <br>
+  Scan Bike
+  </div>
+    
+</div>
+<div id="qranim" style="left:0;top:0;position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;">
+<img src="qranim.gif" style="position:absolute;height:100px;left:50%;top:50%;transform:translate(-50%,0);" />
+  
+
+</div>
+ 
+ <script type="text/javascript">
+
+
+    //var home="http://localhost:8000";
+    var home="http://live-wire.github.io/ip2k17";
+
+    document.getElementById("qrevealer").onclick=function(){
+      document.getElementById("qranim").style.display="block";
+      setTimeout(function(){
+        document.getElementById("qranim").style.display="none";
+      },3000);
+    };
+
+    document.getElementById("dt").onclick=function(){
+      document.location.href=home+"/distance.html";
+    };
+    document.getElementById("pp").onclick=function(){
+      document.location.href=home+"/pickup.html";
+    };
+  </script>
+</body>
+</html>
